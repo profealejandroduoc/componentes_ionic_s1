@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { BotonesPageRoutingModule } from './botones-routing.module';
 
 import { BotonesPage } from './botones.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BotonesPageRoutingModule
+    BotonesPageRoutingModule,
+    ComponentsModule,
   ],
   declarations: [BotonesPage]
 })
