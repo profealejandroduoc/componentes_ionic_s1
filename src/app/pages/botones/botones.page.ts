@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-botones',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BotonesPage implements OnInit {
 
-  constructor() { }
+  mensaje:string='';
+  
+  constructor(private router:Router) { }
 
   ngOnInit() {
+    console.log("Esto es on init");
+  }
+
+  onClick(){
+    console.log("Evento disparado!!!");
+    this.mensaje="Hola desde el evento";
+  }
+
+
+  navegar(){
+    this.router.navigate(['/home'])
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-alertas',
@@ -7,9 +9,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlertasPage implements OnInit {
 
-  constructor() { }
+  texto:string="Texto de la alerta";
+  alertButtons = ['Aceptar', 'Cancelar'];
+
+  constructor(private alertController:AlertController, private router:Router) { }
 
   ngOnInit() {
+    
   }
 
+
+  async alerta(){
+    const alert = await this.alertController.create({
+      header: 'Alerta',
+      subHeader: 'A Sub Header Is Optional',
+      message: this.texto,
+      backdropDismiss:false,
+      buttons: [ {
+        text: 'Cancelar',
+        role: 'cancel',
+        handler: () => {
+          console.log('Botón Cancelar');
+        },
+      },
+      {
+        text: 'OK',
+        role: 'confirm',
+        handler: () => {
+          
+          this.navegar();
+        },
+      },],
+    });
+
+
+
+    await alert.present();
+  }
+
+  navegar()
+  {
+    this.router.navigate(['/home']);
+  }
 }
