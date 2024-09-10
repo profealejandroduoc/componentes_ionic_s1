@@ -4,4 +4,41 @@
 <ion-text color="primary" class="ion-text-center">
   <h1>Página Formularios</h1>
 </ion-text>
+<ion-list>
+  <form #miForm="ngForm" (ngSubmit)="iniciarSesion()">
+    <ion-item>
+      <ion-input label="Usuario" labelPlacement="floating" placeholder="Ingrese usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Password" labelPlacement="floating" placeholder="passsword"></ion-input>
+    </ion-item>
+
+      <ion-button expand="block" (click)="iniciarSesion()" fill="solid" color="tertiary" >
+        Iniciar Sesión
+      </ion-button>
+
+  </form>
+
+</ion-list>
+
+<!-- <form #miForm="ngForm" (ngSubmit)="onSubmit()">
+  
+    <ion-item>
+      <ion-label position="floating">E-Mail </ion-label>
+      <ion-input required formControlName="email" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input required formControlName="password" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+
+      <ion-button block color="primary" type="submit">
+        Login
+      </ion-button>
+    </ion-item>
+
+  </ion-list>
+ 
+</form>  -->
 </ion-content>

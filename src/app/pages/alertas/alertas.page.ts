@@ -10,7 +10,13 @@ import { AlertController } from '@ionic/angular';
 export class AlertasPage implements OnInit {
 
   texto:string="Texto de la alerta";
-  alertButtons = ['Aceptar', 'Cancelar'];
+  alertButtons = [{
+    text:'Aceptar',
+    cssClass:'aceptar-style',
+  }, {
+    text:'Cancelar',
+    cssClass:'danger-style',
+  }];
 
   constructor(private alertController:AlertController, private router:Router) { }
 

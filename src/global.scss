@@ -35,6 +35,19 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
 .alert-head{
-    background-color: red;
+    background-color: red !important;
+}
+
+.alert-message{
+    padding-top: 5% !important;
+}
+
+.aceptar-style{
+    color:var(--ion-color-success) !important;
+}
+
+.danger-style{
+    color:var(--ion-color-danger) !important;
 }

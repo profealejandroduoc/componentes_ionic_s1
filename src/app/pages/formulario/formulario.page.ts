@@ -12,4 +12,7 @@ export class FormularioPage implements OnInit {
   ngOnInit() {
   }
 
+  iniciarSesion(){
+    console.log("Subimit del formulario");
+  }
 }
