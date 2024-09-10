@@ -7,38 +7,35 @@
 <ion-list>
   <form #miForm="ngForm" (ngSubmit)="iniciarSesion()">
     <ion-item>
-      <ion-input label="Usuario" labelPlacement="floating" placeholder="Ingrese usuario"></ion-input>
+      <ion-input label="Usuario" type="text" required labelPlacement="floating" name="usr.username" [(ngModel)]="usr.username" placeholder="Ingrese usuario"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Password" labelPlacement="floating" placeholder="passsword"></ion-input>
+      <ion-input label="Password" type="password" required labelPlacement="floating" name="usr.password" [(ngModel)]="usr.password" placeholder="passsword"></ion-input>
     </ion-item>
 
-      <ion-button expand="block" (click)="iniciarSesion()" fill="solid" color="tertiary" >
+      <ion-button expand="block" (click)="iniciarSesion()" fill="solid" color="tertiary" [disabled]="miForm.invalid" >
         Iniciar Sesión
       </ion-button>
-
+      <ion-text color="primary">
+        <h1>Formulario invalido:{{miForm.valid}}</h1>
+      </ion-text>
   </form>
+
+
 
 </ion-list>
 
-<!-- <form #miForm="ngForm" (ngSubmit)="onSubmit()">
-  
-    <ion-item>
-      <ion-label position="floating">E-Mail </ion-label>
-      <ion-input required formControlName="email" type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input required formControlName="password" type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-
-      <ion-button block color="primary" type="submit">
-        Login
-      </ion-button>
-    </ion-item>
-
-  </ion-list>
- 
-</form>  -->
+<!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <ion-item>
+    <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required formControlName="email" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required formControlName="password" type="text"></ion-input>
+  </ion-item>
+  <ion-button block color="primary" type="submit" [disabled]="loginForm.invalid">
+    Login
+  </ion-button>
+</form> -->
 </ion-content>
