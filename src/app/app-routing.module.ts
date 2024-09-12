@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'action-sheet',
     loadChildren: () => import('./pages/action-sheet/action-sheet.module').then( m => m.ActionSheetPageModule)
   },
+  {
+    path: 'repasoconceptos',
+    loadChildren: () => import('./pages/repasoconceptos/repasoconceptos.module').then( m => m.RepasoconceptosPageModule)
+  },
 
 ];
 

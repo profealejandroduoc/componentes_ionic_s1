@@ -7,6 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActionSheetPage implements OnInit {
 
+  public actionSheetButtons = [
+    {
+      text: 'Borrara',
+      role: 'destructive',
+      data: {
+        action: 'delete',
+      },
+    },
+    {
+      text: 'Compartir',
+      
+      data: {
+        action: 'share',
+      },
+    },
+    {
+      text: 'Cancelar',
+      role: 'cancel',
+      data: {
+        action: 'cancel',
+      },
+    },
+  ];
+
   constructor() { }
 
   ngOnInit() {

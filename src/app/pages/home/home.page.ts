@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from '../../interfaces/menu-item';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -30,10 +31,40 @@ export class HomePage implements OnInit {
       etiqueta:'Action Sheets'
     }
   ]
-
-  constructor() { }
+  public actionSheetButtons = [
+    {
+      text: 'Borrara',
+      role: 'destructive',
+      data: {
+        action: 'delete',
+      },
+    },
+    {
+      text: 'Formularios',
+      handler:()=>{
+        this.router.navigate(['/repasoconceptos']);
+        this.metodoEjemplo();
+      },
+      
+      data: {
+        action: 'share',
+      },
+    },
+    {
+      text: 'Cancelar',
+      role: 'cancel',
+      data: {
+        action: 'cancel',
+      },
+    },
+  ];
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
+  metodoEjemplo()
+  {
+    console.log("hola");
+  }
 }
